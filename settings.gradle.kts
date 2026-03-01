@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Our Major"
+rootProject.name = "ZenSwitch"
 include(":app")
