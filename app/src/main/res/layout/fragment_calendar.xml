@@ -23,13 +23,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_2"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="2">
 
             <TextView
                 android:id="@+id/chip_streak"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:minHeight="32dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:text="7 day streak"
                 android:textAppearance="@style/TextAppearance.ZenSwitch.LabelMedium"
                 android:textColor="?attr/colorOnSurface"
@@ -44,17 +49,20 @@
 
             <TextView
                 android:id="@+id/chip_week_activities"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:minHeight="32dp"
-                android:text="9 activities this week"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="ACTIVITIES"
                 android:textAppearance="@style/TextAppearance.ZenSwitch.LabelMedium"
                 android:textColor="?attr/colorOnSurface"
                 android:paddingStart="@dimen/space_3"
                 android:paddingEnd="@dimen/space_3"
                 android:paddingTop="@dimen/space_1"
                 android:paddingBottom="@dimen/space_1"
-                android:layout_marginStart="@dimen/space_2"
                 android:background="@drawable/bg_small_pill" />
         </LinearLayout>
 

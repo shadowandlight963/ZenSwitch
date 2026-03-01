@@ -6,35 +6,28 @@
     android:layout_height="match_parent"
     android:background="?android:attr/colorBackground">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/topAppBar"
-        style="@style/Widget.ZenSwitch.TopAppBar"
+    <FrameLayout
+        android:id="@+id/topHeaderContainer"
         android:layout_width="0dp"
-        android:layout_height="?attr/actionBarSize"
-        app:elevation="0dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="0dp"
+        android:elevation="4dp"
+        android:background="@drawable/header_glass"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/appTitle"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp">
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="20dp"
+            android:text="ZenSwitch"
+            android:textAppearance="@style/TextAppearance.ZenSwitch.TitleLarge"
+            android:textColor="?attr/colorOnSurface" />
 
-            <TextView
-                android:id="@+id/app_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ZenSwitch"
-                android:textAppearance="@style/TextAppearance.ZenSwitch.TitleMedium"
-                android:textColor="?attr/colorOnSurface"
-                android:alpha="1"/>
-
-        </LinearLayout>
-    </com.google.android.material.appbar.MaterialToolbar>
+    </FrameLayout>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
@@ -42,7 +35,7 @@
         android:layout_height="0dp"
         android:paddingBottom="94dp"
         android:clipToPadding="false"
-        app:layout_constraintTop_toBottomOf="@id/topAppBar"
+        app:layout_constraintTop_toBottomOf="@id/topHeaderContainer"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <com.google.android.material.card.MaterialCardView

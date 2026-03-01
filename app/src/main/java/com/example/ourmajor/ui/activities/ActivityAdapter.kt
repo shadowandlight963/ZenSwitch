@@ -66,7 +66,6 @@ class ActivityAdapter : ListAdapter<ActivityItem, ActivityAdapter.VH>(ActivityIt
         private val tvTitle: TextView = itemView.findViewById(R.id.tv_title)
         private val tvDesc: TextView = itemView.findViewById(R.id.tv_desc)
         private val tvDur: TextView = itemView.findViewById(R.id.tv_duration)
-        private val btnStart: Button = itemView.findViewById(R.id.btn_start)
         private val btnFavorite: ImageButton = itemView.findViewById(R.id.btn_favorite)
         private val btnTime1Min: Button = itemView.findViewById(R.id.btn_time_1min)
         private val btnTime2Min: Button = itemView.findViewById(R.id.btn_time_2min)
@@ -80,16 +79,9 @@ class ActivityAdapter : ListAdapter<ActivityItem, ActivityAdapter.VH>(ActivityIt
             tvDesc.text = item.description
             tvDur.text = "${item.minutes} min"
             card.setBackgroundResource(if (item.title == highlightTitle) R.drawable.bg_card_soft_highlight else R.drawable.bg_card_soft)
-            card.setOnClickListener { onItemClick?.invoke(item) }
-
-            btnFavorite.visibility = View.GONE
-            btnTime1Min.visibility = View.GONE
-            btnTime2Min.visibility = View.GONE
-            btnTime3Min.visibility = View.GONE
-            tvCompletionStatus.visibility = View.GONE
-            tvLastCompleted.visibility = View.GONE
             
-            btnStart.setOnClickListener {
+            // Set card click listener to launch activity
+            card.setOnClickListener {
                 try {
                     val ctx = itemView.context
 
@@ -196,6 +188,13 @@ class ActivityAdapter : ListAdapter<ActivityItem, ActivityAdapter.VH>(ActivityIt
                     android.util.Log.e("ActivityAdapter", "Failed to start exercise activity", e)
                 }
             }
+
+            btnFavorite.visibility = View.GONE
+            btnTime1Min.visibility = View.GONE
+            btnTime2Min.visibility = View.GONE
+            btnTime3Min.visibility = View.GONE
+            tvCompletionStatus.visibility = View.GONE
+            tvLastCompleted.visibility = View.GONE
         }
         
         private fun updateTimeButtonSelection(selectedMinutes: Int) {
