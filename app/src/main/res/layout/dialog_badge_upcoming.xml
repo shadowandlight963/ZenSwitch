@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="300dp"
+    style="@style/Widget.ZenSwitch.Card"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/space_5">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/icon_wrap"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_icon_soft"
+            android:gravity="center"
+            android:layout_alignParentStart="true">
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_target"
+                android:tint="?attr/colorPrimary"/>
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toEndOf="@id/icon_wrap"
+            android:layout_marginStart="@dimen/space_3"
+            android:layout_alignTop="@id/icon_wrap">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Activity Explorer"
+                android:textAppearance="@style/TextAppearance.ZenSwitch.TitleMedium"
+                android:textColor="?attr/colorOnSurface"/>
+            <TextView
+                android:id="@+id/tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="activity"
+                android:textAppearance="@style/TextAppearance.ZenSwitch.LabelMedium"
+                android:textColor="?attr/colorOnSurface"
+                android:paddingStart="@dimen/space_3"
+                android:paddingEnd="@dimen/space_3"
+                android:paddingTop="@dimen/space_1"
+                android:paddingBottom="@dimen/space_1"
+                android:background="@drawable/bg_pill_green"
+                android:layout_marginTop="@dimen/space_2"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btn_close"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_close"
+            android:tint="?attr/colorOnSurfaceVariant"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/space_1"
+            android:layout_marginEnd="@dimen/space_1"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:src="@drawable/ic_lock"
+        android:tint="?attr/colorOnSurfaceVariant"
+        android:layout_marginTop="@dimen/space_2" />
+
+    <TextView
+        android:id="@+id/hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_3"
+        android:text="Try all 5 activity types"
+        android:textAppearance="@style/TextAppearance.ZenSwitch.BodyMedium"
+        android:textColor="?attr/colorOnSurfaceVariant"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Keep going to unlock this badge!"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/space_4"
+        style="@style/Widget.ZenSwitch.Button.Tonal"/>
+
+</LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

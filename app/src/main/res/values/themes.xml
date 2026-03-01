@@ -1,0 +1,202 @@
+<resources>
+
+    <style name="Theme.ZenSwitch" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="chipStyle">@style/Widget.ZenSwitch.Chip</item>
+
+        <item name="textAppearanceDisplayLarge">@style/TextAppearance.ZenSwitch.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/TextAppearance.ZenSwitch.DisplayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/TextAppearance.ZenSwitch.DisplaySmall</item>
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.ZenSwitch.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.ZenSwitch.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.ZenSwitch.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.ZenSwitch.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.ZenSwitch.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.ZenSwitch.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.ZenSwitch.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.ZenSwitch.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.ZenSwitch.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.ZenSwitch.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.ZenSwitch.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.ZenSwitch.LabelSmall</item>
+    </style>
+
+    <style name="Theme.ZenSwitch.Sage" parent="Theme.ZenSwitch">
+        <item name="colorPrimary">@color/sage_primary_fixed</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/sage_secondary</item>
+        <item name="colorOnPrimaryContainer">@color/black</item>
+
+        <item name="gradientStart">@color/button_primary_sage</item>
+        <item name="gradientEnd">@color/button_primary_sage</item>
+        <item name="cardContentColor">@color/white</item>
+
+        <item name="colorSecondary">@color/sage_secondary</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondaryContainer">@color/sage_secondary</item>
+        <item name="colorOnSecondaryContainer">@color/black</item>
+
+        <item name="colorTertiary">@color/sage_primary_fixed</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">@color/sage_secondary</item>
+        <item name="colorOnTertiaryContainer">@color/black</item>
+
+        <item name="colorError">#B3261E</item>
+        <item name="colorOnError">#FFFFFF</item>
+        <item name="colorErrorContainer">#F9DEDC</item>
+        <item name="colorOnErrorContainer">#410E0B</item>
+
+        <item name="android:colorBackground">@color/neutral_bg_fixed</item>
+        <item name="colorOnBackground">@color/neutral_text_fixed</item>
+        <item name="colorSurface">@color/neutral_surface_fixed</item>
+        <item name="colorOnSurface">@color/neutral_text_fixed</item>
+        <item name="colorSurfaceVariant">@color/neutral_surface_variant_fixed</item>
+        <item name="colorOnSurfaceVariant">@color/neutral_text_muted_fixed</item>
+
+        <item name="colorOutline">@color/neutral_outline_fixed</item>
+        <item name="colorOutlineVariant">@color/neutral_outline_fixed</item>
+
+        <item name="colorSurfaceContainerLowest">@color/neutral_surface_fixed</item>
+        <item name="colorSurfaceContainerLow">@color/neutral_surface_fixed</item>
+        <item name="colorSurfaceContainer">@color/neutral_surface_fixed</item>
+        <item name="colorSurfaceContainerHigh">@color/neutral_surface_variant_fixed</item>
+        <item name="colorSurfaceContainerHighest">@color/neutral_surface_variant_fixed</item>
+        <item name="colorSurfaceBright">@color/neutral_surface_fixed</item>
+        <item name="colorSurfaceDim">@color/neutral_bg_fixed</item>
+
+        <item name="android:windowBackground">@color/neutral_bg_fixed</item>
+    </style>
+
+    <style name="Theme.ZenSwitch.Ocean" parent="Theme.ZenSwitch">
+        <item name="colorPrimary">@color/ocean_primary_fixed</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/ocean_secondary_fixed</item>
+        <item name="colorOnPrimaryContainer">@color/black</item>
+
+        <item name="gradientStart">@color/button_primary_ocean</item>
+        <item name="gradientEnd">@color/button_primary_ocean</item>
+        <item name="cardContentColor">@color/white</item>
+
+        <item name="colorSecondary">@color/ocean_secondary_fixed</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondaryContainer">@color/ocean_secondary_fixed</item>
+        <item name="colorOnSecondaryContainer">@color/black</item>
+
+        <item name="colorTertiary">@color/ocean_primary_fixed</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">@color/ocean_secondary_fixed</item>
+        <item name="colorOnTertiaryContainer">@color/black</item>
+
+        <item name="colorError">#B3261E</item>
+        <item name="colorOnError">#FFFFFF</item>
+        <item name="colorErrorContainer">#F9DEDC</item>
+        <item name="colorOnErrorContainer">#410E0B</item>
+
+        <item name="android:colorBackground">@color/neutral_bg_fixed</item>
+        <item name="colorOnBackground">@color/neutral_text_fixed</item>
+        <item name="colorSurface">@color/neutral_surface_fixed</item>
+        <item name="colorOnSurface">@color/neutral_text_fixed</item>
+        <item name="colorSurfaceVariant">@color/neutral_surface_variant_fixed</item>
+        <item name="colorOnSurfaceVariant">@color/neutral_text_muted_fixed</item>
+
+        <item name="colorOutline">@color/neutral_outline_fixed</item>
+        <item name="colorOutlineVariant">@color/neutral_outline_fixed</item>
+
+        <item name="colorSurfaceContainerLowest">@color/neutral_surface_fixed</item>
+        <item name="colorSurfaceContainerLow">@color/neutral_surface_fixed</item>
+        <item name="colorSurfaceContainer">@color/neutral_surface_fixed</item>
+        <item name="colorSurfaceContainerHigh">@color/neutral_surface_variant_fixed</item>
+        <item name="colorSurfaceContainerHighest">@color/neutral_surface_variant_fixed</item>
+        <item name="colorSurfaceBright">@color/neutral_surface_fixed</item>
+        <item name="colorSurfaceDim">@color/neutral_bg_fixed</item>
+
+        <item name="android:windowBackground">@color/neutral_bg_fixed</item>
+    </style>
+
+    <style name="Theme.ZenSwitch.Sunset" parent="Theme.ZenSwitch">
+        <item name="colorPrimary">@color/sunset_primary_soft</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/sunset_secondary_soft</item>
+        <item name="colorOnPrimaryContainer">@color/black</item>
+
+        <item name="gradientStart">@color/button_primary_sunset</item>
+        <item name="gradientEnd">@color/button_primary_sunset</item>
+        <item name="cardContentColor">@color/white</item>
+
+        <item name="colorSecondary">@color/sunset_secondary_fixed</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondaryContainer">@color/sunset_secondary_fixed</item>
+        <item name="colorOnSecondaryContainer">@color/black</item>
+
+        <item name="colorTertiary">@color/sunset_primary_fixed</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">@color/sunset_secondary_fixed</item>
+        <item name="colorOnTertiaryContainer">@color/black</item>
+
+        <item name="colorError">#B3261E</item>
+        <item name="colorOnError">#FFFFFF</item>
+        <item name="colorErrorContainer">#F9DEDC</item>
+        <item name="colorOnErrorContainer">#410E0B</item>
+
+        <item name="android:colorBackground">@color/neutral_bg_fixed</item>
+        <item name="colorOnBackground">@color/neutral_text_fixed</item>
+        <item name="colorSurface">@color/neutral_surface_fixed</item>
+        <item name="colorOnSurface">@color/neutral_text_fixed</item>
+        <item name="colorSurfaceVariant">@color/neutral_surface_variant_fixed</item>
+        <item name="colorOnSurfaceVariant">@color/neutral_text_muted_fixed</item>
+
+        <item name="colorOutline">@color/neutral_outline_fixed</item>
+        <item name="colorOutlineVariant">@color/neutral_outline_fixed</item>
+
+        <item name="colorSurfaceContainerLowest">@color/neutral_surface_fixed</item>
+        <item name="colorSurfaceContainerLow">@color/neutral_surface_fixed</item>
+        <item name="colorSurfaceContainer">@color/neutral_surface_fixed</item>
+        <item name="colorSurfaceContainerHigh">@color/neutral_surface_variant_fixed</item>
+        <item name="colorSurfaceContainerHighest">@color/neutral_surface_variant_fixed</item>
+        <item name="colorSurfaceBright">@color/neutral_surface_fixed</item>
+        <item name="colorSurfaceDim">@color/neutral_bg_fixed</item>
+
+        <item name="android:windowBackground">@color/neutral_bg_fixed</item>
+    </style>
+
+    <style name="Theme.ZenSwitch.Minimal" parent="Theme.ZenSwitch">
+        <item name="colorPrimary">@color/button_primary_minimal</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/neutral_surface_variant_fixed</item>
+        <item name="colorOnPrimaryContainer">@color/neutral_text_fixed</item>
+
+        <item name="gradientStart">@color/button_primary_minimal</item>
+        <item name="gradientEnd">@color/button_primary_minimal</item>
+        <item name="cardContentColor">@color/white</item>
+
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/white</item>
+        <item name="colorOnSecondaryContainer">@color/black</item>
+
+        <item name="colorTertiary">@color/black</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">@color/white</item>
+        <item name="colorOnTertiaryContainer">@color/black</item>
+
+        <item name="android:colorBackground">@color/neutral_bg_fixed</item>
+        <item name="colorOnBackground">@color/neutral_text_fixed</item>
+        <item name="colorSurface">@color/neutral_surface_fixed</item>
+        <item name="colorOnSurface">@color/neutral_text_fixed</item>
+        <item name="colorSurfaceVariant">@color/neutral_surface_variant_fixed</item>
+        <item name="colorOnSurfaceVariant">@color/neutral_text_muted_fixed</item>
+
+        <item name="colorOutline">@color/neutral_outline_fixed</item>
+        <item name="colorOutlineVariant">@color/neutral_outline_fixed</item>
+
+        <item name="android:windowBackground">@color/neutral_bg_fixed</item>
+    </style>
+
+    <style name="Theme.OurMajor" parent="Theme.ZenSwitch.Sage" />
+
+</resources>

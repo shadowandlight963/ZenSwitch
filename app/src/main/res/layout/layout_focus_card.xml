@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/focus_guard_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="@drawable/card_ripple_effect"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="?attr/colorPrimaryContainer"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Status pill: top right (Power/Pause - receives its own clicks, above card body) -->
+        <TextView
+            android:id="@+id/focus_guard_pill"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/focus_guard_pill_inactive"
+            android:textColor="?attr/colorOnPrimaryContainer"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_focus_pill_inactive"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:elevation="2dp"
+            android:contentDescription="@string/toggle_focus_guard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="ON" />
+
+        <!-- Header -->
+        <TextView
+            android:id="@+id/focus_guard_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/focus_guard_title"
+            android:textColor="?attr/colorOnPrimaryContainer"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Subtitle: Permission needed / Tap to configure / Monitoring active -->
+        <TextView
+            android:id="@+id/focus_guard_subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="?attr/colorOnPrimaryContainer"
+            android:textSize="13sp"
+            android:alpha="0.9"
+            app:layout_constraintEnd_toStartOf="@id/focus_guard_pill"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/focus_guard_title"
+            tools:text="Tap to configure" />
+
+        <!-- Stats row: Instagram | YouTube -->
+        <LinearLayout
+            android:id="@+id/focus_guard_stats_row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/focus_guard_subtitle">
+
+            <ImageView
+                android:id="@+id/focus_icon_instagram"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="@string/instagram_usage_tracking"
+                android:src="@drawable/ic_brand_instagram"
+                app:tint="?attr/colorOnPrimaryContainer" />
+            <TextView
+                android:id="@+id/focus_stats_instagram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textColor="?attr/colorOnPrimaryContainer"
+                android:textSize="14sp"
+                tools:text="0m" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:text="|"
+                android:textColor="?attr/colorOnPrimaryContainer"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/focus_icon_youtube"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="@string/youtube_usage_tracking"
+                android:src="@drawable/ic_brand_youtube"
+                app:tint="?attr/colorOnPrimaryContainer" />
+            <TextView
+                android:id="@+id/focus_stats_youtube"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textColor="?attr/colorOnPrimaryContainer"
+                android:textSize="14sp"
+                tools:text="0m" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

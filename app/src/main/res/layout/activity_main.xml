@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        style="@style/Widget.ZenSwitch.TopAppBar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:elevation="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+
+            <ImageView
+                android:id="@+id/app_logo"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_logo_placeholder"
+                android:tint="?attr/colorOnSurface"
+                android:contentDescription="@string/app_name"/>
+
+            <TextView
+                android:id="@+id/app_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="ZenSwitch"
+                android:textAppearance="@style/TextAppearance.ZenSwitch.TitleMedium"
+                android:textColor="?attr/colorOnSurface"
+                android:alpha="1"/>
+
+        </LinearLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="94dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/floating_nav_container"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="?attr/colorSurface"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="12dp"
+        app:cardBackgroundColor="?attr/colorSurface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="5">
+
+            <!-- Home Navigation Item -->
+            <LinearLayout
+                android:id="@+id/nav_home"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/nav_home_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_nav_home_outline"
+                    android:tint="@color/bottom_nav_item_color" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp" />
+
+                <TextView
+                    android:id="@+id/nav_home_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_home"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:textColor="@color/bottom_nav_item_color" />
+
+            </LinearLayout>
+
+            <!-- Activities Navigation Item -->
+            <LinearLayout
+                android:id="@+id/nav_activities"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/nav_activities_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_nav_leaf"
+                    android:tint="@color/bottom_nav_item_color" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp" />
+
+                <TextView
+                    android:id="@+id/nav_activities_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_activities"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:textColor="@color/bottom_nav_item_color" />
+
+            </LinearLayout>
+
+            <!-- Calendar Navigation Item -->
+            <LinearLayout
+                android:id="@+id/nav_calendar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/nav_calendar_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_nav_calendar_outline"
+                    android:tint="@color/bottom_nav_item_color" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp" />
+
+                <TextView
+                    android:id="@+id/nav_calendar_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_calendar"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:textColor="@color/bottom_nav_item_color" />
+
+            </LinearLayout>
+
+            <!-- Rewards Navigation Item -->
+            <LinearLayout
+                android:id="@+id/nav_rewards"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/nav_rewards_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_nav_gift_outline"
+                    android:tint="@color/bottom_nav_item_color" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp" />
+
+                <TextView
+                    android:id="@+id/nav_rewards_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_rewards"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:textColor="@color/bottom_nav_item_color" />
+
+            </LinearLayout>
+
+            <!-- Profile Navigation Item -->
+            <LinearLayout
+                android:id="@+id/nav_profile"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/nav_profile_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_nav_profile_outline"
+                    android:tint="@color/bottom_nav_item_color" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp" />
+
+                <TextView
+                    android:id="@+id/nav_profile_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_profile"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:textColor="@color/bottom_nav_item_color" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

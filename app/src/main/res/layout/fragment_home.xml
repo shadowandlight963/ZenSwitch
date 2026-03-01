@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="?android:attr/colorBackground"
+        android:paddingBottom="88dp"
+        android:clipToPadding="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/hero"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/space_6"
+            android:paddingEnd="@dimen/space_6"
+            android:paddingBottom="@dimen/space_4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:id="@+id/header_text_block"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space_4"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/header_image"
+                app:layout_constraintTop_toTopOf="@id/header_image"
+                app:layout_constraintBottom_toBottomOf="@id/header_image">
+
+                <TextView
+                    android:id="@+id/home_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Good morning, Sarah! ☀️"
+                    android:textAppearance="@style/TextAppearance.ZenSwitch.HeadlineMedium"
+                    android:textColor="?attr/colorOnSurface"
+                    android:ellipsize="end"
+                    android:maxLines="1" />
+
+                <TextView
+                    android:id="@+id/home_subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_1"
+                    android:text="Ready for today\'s mindful moment?"
+                    android:textAppearance="@style/TextAppearance.ZenSwitch.BodyMedium"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:ellipsize="end"
+                    android:maxLines="2" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/header_image"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_sage_forest"
+                android:contentDescription="@string/zen_switch_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:src="@drawable/hero_header" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/progress_card"
+            style="@style/Widget.ZenSwitch.Card.Elevated"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_4"
+            android:layout_marginEnd="@dimen/space_4"
+            android:layout_marginTop="@dimen/space_2"
+            app:layout_constraintTop_toBottomOf="@id/hero"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/space_6"
+                android:paddingEnd="@dimen/space_6"
+                android:paddingTop="@dimen/space_6"
+                android:paddingBottom="@dimen/space_6">
+
+                <TextView
+                    android:id="@+id/today_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/space_3"
+                    android:text="Today's Progress"
+                    android:textAppearance="@style/TextAppearance.ZenSwitch.TitleMedium"
+                    android:textColor="?attr/colorOnSurface"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/chip_today_count"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- In-card streak pill aligned to top end -->
+                <TextView
+                    android:id="@+id/chip_today_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="@dimen/space_1"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/space_3"
+                    android:paddingEnd="@dimen/space_3"
+                    android:text="0 Activities"
+                    android:textAppearance="@style/TextAppearance.ZenSwitch.LabelMedium"
+                    android:textColor="?attr/colorOnSurface"
+                    android:drawableStart="@drawable/ic_bolt"
+                    android:drawableTint="?attr/colorPrimary"
+                    android:drawablePadding="@dimen/space_2"
+                    android:background="@drawable/bg_small_pill"
+                    android:backgroundTint="?attr/colorSurfaceVariant"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_daily_goal_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_1"
+                    android:text="Goal: 0 / 60 mins"
+                    android:textAppearance="@style/TextAppearance.ZenSwitch.BodySmall"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/today_label" />
+
+                <com.example.ourmajor.ui.home.RoundedArcProgressView
+                    android:id="@+id/circle"
+                    android:layout_width="212dp"
+                    android:layout_height="212dp"
+                    app:rapv_strokeWidth="20dp"
+                    app:rapv_progressColor="?attr/colorPrimary"
+                    app:rapv_trackColor="?attr/colorSurfaceVariant"
+                    android:layout_marginTop="@dimen/space_3"
+                    android:layout_marginBottom="@dimen/space_4"
+                    app:layout_constraintTop_toBottomOf="@id/tv_daily_goal_status"
+                    app:layout_constraintBottom_toTopOf="@id/start_button"
+                    app:layout_goneMarginBottom="@dimen/space_4"
+                    app:layout_goneMarginTop="@dimen/space_4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="@id/circle"
+                    app:layout_constraintBottom_toBottomOf="@id/circle"
+                    app:layout_constraintStart_toStartOf="@id/circle"
+                    app:layout_constraintEnd_toEndOf="@id/circle">
+
+                    <TextView
+                        android:id="@+id/today_minutes_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18"
+                        android:textAppearance="@style/TextAppearance.ZenSwitch.DisplaySmall"
+                        android:textColor="?attr/colorOnSurface"
+                        android:fontFamily="sans-serif-light"
+                        android:textStyle="normal" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MINUTES"
+                        android:letterSpacing="0.1"
+                        android:textAppearance="@style/TextAppearance.ZenSwitch.LabelMedium"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+                </LinearLayout>
+
+                <!-- Start button inside the card -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/start_button"
+                    style="@style/Widget.ZenSwitch.Button.Primary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Start Today's Mindful Moment"
+                    android:background="@drawable/btn_ripple_effect"
+                    app:icon="@drawable/ic_play"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Stat cards row -->
+        <LinearLayout
+            android:id="@+id/stats_row"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_4"
+            android:layout_marginEnd="@dimen/space_4"
+            android:layout_marginTop="@dimen/space_4"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/progress_card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="88dp"
+                style="@style/Widget.ZenSwitch.Card"
+                android:layout_marginEnd="@dimen/space_2"
+                app:cardElevation="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/week_minutes_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2h 15m"
+                        android:textAppearance="@style/TextAppearance.ZenSwitch.TitleLarge"
+                        android:textColor="?attr/colorOnSurface" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_this_week"
+                        android:textAppearance="@style/TextAppearance.ZenSwitch.BodySmall"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="88dp"
+                style="@style/Widget.ZenSwitch.Card"
+                android:layout_marginStart="@dimen/space_2"
+                app:cardElevation="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/week_sessions_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12"
+                        android:textAppearance="@style/TextAppearance.ZenSwitch.TitleLarge"
+                        android:textColor="?attr/colorOnSurface" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_activities_done"
+                        android:textAppearance="@style/TextAppearance.ZenSwitch.BodySmall"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- Focus Guard (Premium) Card -->
+        <include
+            android:id="@+id/focus_guard_card_include"
+            layout="@layout/layout_focus_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_4"
+            android:layout_marginEnd="@dimen/space_4"
+            android:layout_marginTop="@dimen/space_4"
+            app:layout_constraintTop_toBottomOf="@id/stats_row"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Featured Activities Section -->
+        <TextView
+            android:id="@+id/featured_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_6"
+            android:layout_marginTop="@dimen/space_6"
+            android:text="Featured Activities"
+            android:textAppearance="@style/TextAppearance.ZenSwitch.TitleMedium"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintTop_toBottomOf="@id/focus_guard_card_include"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <HorizontalScrollView
+            android:id="@+id/featured_carousel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_2"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingStart="@dimen/space_4"
+            android:paddingEnd="@dimen/space_4"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@id/featured_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/featured_card_morning"
+                    android:layout_width="280dp"
+                    android:layout_height="170dp"
+                    style="@style/Widget.ZenSwitch.Card"
+                    android:layout_marginEnd="@dimen/space_3"
+                    app:cardElevation="0dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/colorSurface">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="@dimen/space_4">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_flame"
+                                android:tint="?attr/colorPrimary"
+                                android:contentDescription="@null" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_3"
+                                android:text="Morning Wake Up"
+                                android:textAppearance="@style/TextAppearance.ZenSwitch.TitleMedium"
+                                android:textColor="?attr/colorOnSurface" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_1"
+                                android:text="Boost energy in 3 minutes"
+                                android:textAppearance="@style/TextAppearance.ZenSwitch.BodySmall"
+                                android:textColor="?attr/colorOnSurfaceVariant" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_4"
+                                android:text="START"
+                                android:textColor="?attr/colorPrimary"
+                                android:textAppearance="@style/TextAppearance.ZenSwitch.LabelLarge"
+                                android:letterSpacing="0.1" />
+                        </LinearLayout>
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/featured_card_breathing"
+                    android:layout_width="280dp"
+                    android:layout_height="170dp"
+                    style="@style/Widget.ZenSwitch.Card"
+                    android:layout_marginEnd="@dimen/space_3"
+                    app:cardElevation="0dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/colorSurface">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="@dimen/space_4">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_bolt"
+                                android:tint="?attr/colorPrimary"
+                                android:contentDescription="@null" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_3"
+                                android:text="Box Breathing"
+                                android:textAppearance="@style/TextAppearance.ZenSwitch.TitleMedium"
+                                android:textColor="?attr/colorOnSurface" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_1"
+                                android:text="Reset in 2 minutes"
+                                android:textAppearance="@style/TextAppearance.ZenSwitch.BodySmall"
+                                android:textColor="?attr/colorOnSurfaceVariant" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_4"
+                                android:text="START"
+                                android:textColor="?attr/colorPrimary"
+                                android:textAppearance="@style/TextAppearance.ZenSwitch.LabelLarge"
+                                android:letterSpacing="0.1" />
+                        </LinearLayout>
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/featured_card_sleep"
+                    android:layout_width="280dp"
+                    android:layout_height="170dp"
+                    style="@style/Widget.ZenSwitch.Card"
+                    android:layout_marginEnd="@dimen/space_1"
+                    app:cardElevation="0dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/colorSurface">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="@dimen/space_4">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_bell"
+                                android:tint="?attr/colorPrimary"
+                                android:contentDescription="@null" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_3"
+                                android:text="Resonant Wave"
+                                android:textAppearance="@style/TextAppearance.ZenSwitch.TitleMedium"
+                                android:textColor="?attr/colorOnSurface" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_1"
+                                android:text="6s In, 6s Out"
+                                android:textAppearance="@style/TextAppearance.ZenSwitch.BodySmall"
+                                android:textColor="?attr/colorOnSurfaceVariant" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_4"
+                                android:text="START"
+                                android:textColor="?attr/colorPrimary"
+                                android:textAppearance="@style/TextAppearance.ZenSwitch.LabelLarge"
+                                android:letterSpacing="0.1" />
+                        </LinearLayout>
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Recent activities label -->
+        <TextView
+            android:id="@+id/recent_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_6"
+            android:layout_marginTop="@dimen/space_6"
+            android:text="My Rhythm"
+            android:textAppearance="@style/TextAppearance.ZenSwitch.TitleMedium"
+            app:layout_constraintTop_toBottomOf="@id/featured_carousel"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/quoteCard"
+            style="@style/Widget.ZenSwitch.Card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_4"
+            android:layout_marginEnd="@dimen/space_4"
+            android:layout_marginTop="@dimen/space_2"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/recent_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/space_5">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginBottom="@dimen/space_2"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_star_badge"
+                    android:tint="@color/text_muted" />
+
+                <TextView
+                    android:id="@+id/quoteText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.ZenSwitch.BodyMedium"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textStyle="italic"
+                    tools:text="The journey of a thousand miles begins with a single step." />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Recent activities list -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recent_activities_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_4"
+            android:layout_marginEnd="@dimen/space_4"
+            android:layout_marginTop="@dimen/space_2"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
+            android:paddingBottom="@dimen/space_6"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/recent_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_recent_activity" />
+
+        
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

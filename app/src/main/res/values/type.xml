@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.ZenSwitch.DisplayLarge" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.ZenSwitch.DisplayMedium" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.ZenSwitch.DisplaySmall" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.ZenSwitch.HeadlineLarge" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.ZenSwitch.HeadlineMedium" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.ZenSwitch.HeadlineSmall" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.ZenSwitch.TitleLarge" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.ZenSwitch.TitleMedium" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.ZenSwitch.TitleSmall" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.ZenSwitch.BodyLarge" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.ZenSwitch.BodyMedium" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.ZenSwitch.BodySmall" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.ZenSwitch.LabelLarge" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.ZenSwitch.LabelMedium" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.ZenSwitch.LabelSmall" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+</resources>

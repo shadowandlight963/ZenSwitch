@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/space_4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mindful Activities"
+            android:textAppearance="@style/TextAppearance.ZenSwitch.HeadlineMedium"
+            android:textColor="?attr/colorOnSurface" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose a 40-60 second activity to reset your mind"
+            android:textAppearance="@style/TextAppearance.ZenSwitch.BodyMedium"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:layout_marginTop="@dimen/space_2"
+            android:layout_marginBottom="@dimen/space_4" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSurprise"
+            style="@style/Widget.ZenSwitch.Button.Tonal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_5"
+            android:text="Surprise Me - Random Activity"
+            android:textAllCaps="false"
+            app:icon="@drawable/ic_dice"
+            app:iconTint="?attr/colorPrimary" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_4"
+            app:singleLine="false"
+            app:singleSelection="true"
+            app:chipSpacingHorizontal="@dimen/space_2"
+            app:chipSpacingVertical="@dimen/space_2" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/activitiesList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:nestedScrollingEnabled="false"
+            android:paddingTop="@dimen/space_2"
+            android:paddingBottom="88dp"
+            android:clipToPadding="false"/>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

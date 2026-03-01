@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <!-- ZenSwitch Focus Engine: usage tracking -->
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+
+    <application
+    android:name=".ZenSwitchApp"
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/Theme.ZenSwitch.Sage">
+
+    <activity
+        android:name=".auth.AuthActivity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+
+    <activity
+        android:name=".ui.activities.ExerciseActivity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+
+    <activity
+        android:name=".ui.breathing.BoxBreathingActivity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+
+    <activity
+        android:name=".ui.breathing.SleepBreathActivity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+
+    <activity
+        android:name=".ui.breathing.ResonantBreathActivity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+
+    <activity
+        android:name=".ui.stretching.StretchingSessionActivity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+    <activity
+        android:name=".ui.stretching.StretchPlaceholder1Activity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+    <activity
+        android:name=".ui.stretching.StretchPlaceholder2Activity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+
+    <activity
+        android:name=".ui.mindfulness.MindfulnessSessionActivity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+    <activity
+        android:name=".ui.mindfulness.MindfulnessPlaceholder1Activity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+    <activity
+        android:name=".ui.mindfulness.MindfulnessPlaceholder2Activity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+
+    <activity
+        android:name=".ui.journaling.JournalingSessionActivity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+    <activity
+        android:name=".ui.journaling.JournalingPlaceholder1Activity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+    <activity
+        android:name=".ui.journaling.JournalingPlaceholder2Activity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+
+    <activity
+        android:name=".ui.quickgames.QuickGamesActivity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+    <activity
+        android:name=".ui.quickgames.GamePlaceholder1Activity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+    <activity
+        android:name=".ui.quickgames.GamePlaceholder2Activity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+
+    <activity
+        android:name=".ui.activities.TestActivity"
+        android:exported="false"
+        android:theme="@style/Theme.OurMajor" />
+
+    <activity
+        android:name=".MainActivity"
+        android:exported="true"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="adjustResize">
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
+    </activity>
+
+    <receiver
+        android:name=".utils.ReminderReceiver"
+        android:enabled="true"
+        android:exported="false" />
+
+    <!-- NEW Focus Guard System: Core monitoring service -->
+    <service
+        android:name=".focusguard.FocusGuardCoreService"
+        android:enabled="true"
+        android:exported="false"
+        android:foregroundServiceType="dataSync" />
+
+    <!-- NEW Focus Guard System: Multi-signal intervention service -->
+    <service
+        android:name=".focusguard.MultiSignalInterventionService"
+        android:enabled="true"
+        android:exported="false"
+        android:foregroundServiceType="specialUse" />
+
+    <!-- NEW Focus Guard System: Boot receiver for OEM survival -->
+    <receiver
+        android:name=".focusguard.FocusGuardBootReceiver"
+        android:enabled="true"
+        android:exported="true">
+        <intent-filter android:priority="1000">
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+            <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            <action android:name="android.intent.action.PACKAGE_REPLACED" />
+            <data android:scheme="package" />
+        </intent-filter>
+    </receiver>
+
+    </application>
+
+</manifest>

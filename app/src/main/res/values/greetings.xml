@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Time-based greetings -->
+    <string-array name="time_based_greetings">
+        <item>Good morning</item>
+        <item>Good afternoon</item>
+        <item>Good evening</item>
+        <item>Hello</item>
+    </string-array>
+    
+    <!-- Contextual subtitles -->
+    <string-array name="time_based_subtitles">
+        <item>Ready for today\'s mindful moment?</item>
+        <item>Time for a mindful break?</item>
+        <item>Ready to unwind?</item>
+        <item>Ready for a mindful moment?</item>
+    </string-array>
+</resources>

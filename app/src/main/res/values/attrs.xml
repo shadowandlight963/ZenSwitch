@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="gradientStart" format="color|reference" />
+    <attr name="gradientEnd" format="color|reference" />
+    <attr name="cardContentColor" format="color|reference" />
+
+    <declare-styleable name="RoundedArcProgressView">
+        <attr name="rapv_progress" format="float" />
+        <attr name="rapv_max" format="float" />
+        <attr name="rapv_progressColor" format="color" />
+        <attr name="rapv_trackColor" format="color" />
+        <attr name="rapv_strokeWidth" format="dimension" />
+    </declare-styleable>
+</resources>

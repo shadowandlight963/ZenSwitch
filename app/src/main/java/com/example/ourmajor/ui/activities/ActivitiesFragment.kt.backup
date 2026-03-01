@@ -1,0 +1,137 @@
+package com.example.ourmajor.ui.activities
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import android.text.TextUtils
+import com.google.android.material.chip.Chip
+import com.google.android.material.chip.ChipGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.ourmajor.R
+import com.example.ourmajor.data.catalog.Activity
+import com.example.ourmajor.ui.activities.ActivitiesViewModel
+import com.example.ourmajor.ui.catalog.CatalogViewModel
+
+class ActivitiesFragment : Fragment() {
+    private lateinit var list: RecyclerView
+    private lateinit var adapter: ActivityAdapter
+    private lateinit var chipGroupTop: ChipGroup
+    private lateinit var chipGroupBottom: ChipGroup
+    private var selectedCategory: String = "breathing"
+    private lateinit var catalogViewModel: CatalogViewModel
+    private lateinit var activitiesViewModel: ActivitiesViewModel
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_activities, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        list = view.findViewById(R.id.activitiesList)
+        list.layoutManager = LinearLayoutManager(requireContext())
+        adapter = ActivityAdapter()
+        adapter.setOnItemClick { item ->
+            // TODO: Navigate to ActivityDetailFragment
+        }
+        adapter.setOnFavoriteClick { activityId, isFavorite ->
+            activitiesViewModel.toggleFavorite(activityId)
+        }
+        list.adapter = adapter
+
+        chipGroupTop = view.findViewById(R.id.chipGroupTop)
+        chipGroupBottom = view.findViewById(R.id.chipGroupBottom)
+
+        catalogViewModel = ViewModelProvider(this)[CatalogViewModel::class.java]
+        activitiesViewModel = ViewModelProvider(this)[ActivitiesViewModel::class.java]
+
+        // Observe activities state (includes catalog + favorites + recent)
+        activitiesViewModel.uiState.observe(viewLifecycleOwner) { state ->
+            // Build category chips
+            chipGroupTop.removeAllViews()
+            chipGroupBottom.removeAllViews()
+            val icons = mapOf(
+                "meditation" to "\ud83e\uddd8",
+                "breathing" to "\ud83c\udf2c\ufe0f",
+                "yoga" to "\ud83e\uddd8\u200d\u2640\ufe0f",
+                "focus" to "\ud83c\udfaf"
+            )
+            state.categories.forEachIndexed { idx, cat ->
+                val chip = Chip(requireContext()).apply {
+                    text = cat.name
+                    tag = cat.id
+                }
+                styleChip(chip, cat.id == selectedCategory)
+                if (idx < 3) chipGroupTop.addView(chip) else chipGroupBottom.addView(chip)
+            }
+            // Update activities list for selected category
+            val filtered = state.activities.filter { it.categoryId == selectedCategory }
+            adapter.submitList(filtered.map { ActivityItem(it.name, it.description, it.durationMinutes, it.categoryId) })
+            // Pass favorites to adapter (update ActivityAdapter to support this)
+            adapter.setFavorites(state.favorites)
+        }
+
+    private fun styleChip(chip: Chip, checked: Boolean) {
+        val green = ContextCompat.getColor(requireContext(), R.color.sage_primary)
+        val white = ContextCompat.getColor(requireContext(), android.R.color.white)
+        val textFg = ContextCompat.getColor(requireContext(), R.color.text_foreground)
+        chip.isCheckable = true
+        chip.isChecked = checked
+        val radius = resources.displayMetrics.density * 16
+        chip.shapeAppearanceModel = chip.shapeAppearanceModel
+            .toBuilder()
+            .setAllCornerSizes(radius)
+            .build()
+        chip.chipStrokeWidth = resources.displayMetrics.density * 1
+        chip.chipStrokeColor = android.content.res.ColorStateList.valueOf(0xFFE5E9E6.toInt())
+        chip.setTextColor(if (checked) white else textFg)
+        chip.chipBackgroundColor = android.content.res.ColorStateList.valueOf(if (checked) green else white)
+        chip.minimumHeight = (resources.displayMetrics.density * 36).toInt()
+        chip.isSingleLine = true
+        chip.setLines(1)
+        chip.ellipsize = TextUtils.TruncateAt.END
+        chip.textSize = 12.5f
+        val hPad = (resources.displayMetrics.density * 8).toInt()
+        chip.chipStartPadding = hPad.toFloat()
+        chip.chipEndPadding = hPad.toFloat()
+        chip.setEnsureMinTouchTargetSize(false)
+        chip.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) selectCategory((chip.tag as? String) ?: chip.text.toString())
+            // refresh styles for all chips
+            fun restyle(group: ChipGroup) {
+                for (i in 0 until group.childCount) {
+                    val ch = group.getChildAt(i) as Chip
+                    val cat = (ch.tag as? String) ?: ch.text.toString()
+                    styleChip(ch, cat == selectedCategory)
+                }
+            }
+            restyle(chipGroupTop)
+            restyle(chipGroupBottom)
+        }
+    }
+
+    private fun selectCategory(category: String) {
+        selectedCategory = category
+        // Update ViewModel with selected category
+        activitiesViewModel.selectMainCategory(category)
+        // update chip styles
+        fun updateChecked(group: ChipGroup) {
+            for (i in 0 until group.childCount) {
+                val ch = group.getChildAt(i) as Chip
+                val cat = (ch.tag as? String) ?: ch.text.toString()
+                ch.isChecked = cat == category
+            }
+        }
+        updateChecked(chipGroupTop)
+        updateChecked(chipGroupBottom)
+        // filter list using catalog data
+        val data = catalogViewModel.uiState.value?.activities?.filter { it.categoryId == category }
+        adapter.submitList(data?.map { ActivityItem(it.name, it.description, it.durationMinutes, it.categoryId) } ?: emptyList())
+    }
+}

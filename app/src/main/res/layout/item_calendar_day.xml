@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/day_root"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:layout_margin="@dimen/space_1"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/tv_day"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.ZenSwitch.BodyMedium"
+        android:textColor="?attr/colorOnSurface"/>
+
+    <View
+        android:id="@+id/dot_today"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:layout_gravity="end|top"
+        android:layout_margin="4dp"
+        android:background="@drawable/bg_day_dot"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/dot_activity"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/bg_day_dot"
+        android:visibility="gone"/>
+</FrameLayout>

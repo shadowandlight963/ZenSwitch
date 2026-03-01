@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/space_6"
+        android:paddingEnd="@dimen/space_6"
+        android:paddingTop="@dimen/space_8"
+        android:paddingBottom="@dimen/space_5">
+
+        <ImageButton
+            android:id="@+id/btnClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Close"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:tint="?attr/colorOnSurfaceVariant" />
+
+        <TextView
+            android:id="@+id/tvExerciseTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Activity"
+            android:textAppearance="@style/TextAppearance.ZenSwitch.TitleMedium"
+            android:textColor="?attr/colorOnSurface"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/btnSkip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skip"
+            android:textAppearance="@style/TextAppearance.ZenSwitch.LabelLarge"
+            android:textColor="?attr/colorPrimary"/>
+    </LinearLayout>
+
+    <!-- Center area: timer ring above breathing circle -->
+    <LinearLayout
+        android:id="@+id/centerStack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingStart="@dimen/space_6"
+        android:paddingEnd="@dimen/space_6"
+        android:layout_marginTop="@dimen/space_7"
+        android:layout_marginBottom="@dimen/space_7">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/timerRing"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                app:indicatorDirectionCircular="counterclockwise"
+                app:indicatorSize="200dp"
+                app:indicatorInset="0dp"
+                app:trackThickness="12dp"
+                app:trackColor="?attr/colorSurfaceVariant"
+                app:indicatorColor="?attr/colorPrimary"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/tvTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1:00"
+                    android:textAppearance="@style/TextAppearance.ZenSwitch.DisplayLarge"
+                    android:textColor="?attr/colorOnSurface"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="remaining"
+                    android:textAppearance="@style/TextAppearance.ZenSwitch.BodySmall"
+                    android:textColor="?attr/colorOnSurfaceVariant"/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Breathing pulse circle under timer -->
+        <View
+            android:id="@+id/pulseCircle"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="@dimen/space_7"
+            android:background="@drawable/bg_pulse_circle"
+            android:alpha="0.8"/>
+
+        <!-- Instruction card just below breathing circle -->
+        <TextView
+            android:id="@+id/tvInstruction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_6"
+            android:paddingStart="@dimen/space_5"
+            android:paddingEnd="@dimen/space_5"
+            android:paddingTop="@dimen/space_4"
+            android:paddingBottom="@dimen/space_4"
+            android:text="Breathe in"
+            android:textAppearance="@style/TextAppearance.ZenSwitch.HeadlineSmall"
+            android:textColor="?attr/colorOnSurface"
+            android:background="@drawable/bg_small_pill"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/controlsRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/space_6"
+        android:paddingEnd="@dimen/space_6"
+        android:paddingBottom="@dimen/space_6"
+        android:paddingTop="@dimen/space_2">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Stop"
+            style="@style/Widget.ZenSwitch.Button.Text" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPause"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/space_2"
+            android:text="Pause"
+            style="@style/Widget.ZenSwitch.Button.Tonal" />
+
+    </LinearLayout>
+
+</FrameLayout>

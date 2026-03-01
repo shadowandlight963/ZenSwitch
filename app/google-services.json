@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "421926164642",
+    "project_id": "zenswitch",
+    "storage_bucket": "zenswitch.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:421926164642:android:211331a39ebfe9b6ac5ffb",
+        "android_client_info": {
+          "package_name": "com.example.ourmajor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy4vmY4-2xBwS7bm_uzkNgjf-2SpBKpBk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

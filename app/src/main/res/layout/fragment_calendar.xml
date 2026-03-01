@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="?android:attr/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/space_4">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your History"
+            android:textAppearance="@style/TextAppearance.ZenSwitch.HeadlineMedium"
+            android:textColor="?attr/colorOnSurface" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/chip_streak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="32dp"
+                android:text="7 day streak"
+                android:textAppearance="@style/TextAppearance.ZenSwitch.LabelMedium"
+                android:textColor="?attr/colorOnSurface"
+                android:drawableStart="@drawable/ic_flame"
+                android:drawableTint="?attr/colorPrimary"
+                android:drawablePadding="@dimen/space_1"
+                android:paddingStart="@dimen/space_3"
+                android:paddingEnd="@dimen/space_3"
+                android:paddingTop="@dimen/space_1"
+                android:paddingBottom="@dimen/space_1"
+                android:background="@drawable/bg_small_pill" />
+
+            <TextView
+                android:id="@+id/chip_week_activities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="32dp"
+                android:text="9 activities this week"
+                android:textAppearance="@style/TextAppearance.ZenSwitch.LabelMedium"
+                android:textColor="?attr/colorOnSurface"
+                android:paddingStart="@dimen/space_3"
+                android:paddingEnd="@dimen/space_3"
+                android:paddingTop="@dimen/space_1"
+                android:paddingBottom="@dimen/space_1"
+                android:layout_marginStart="@dimen/space_2"
+                android:background="@drawable/bg_small_pill" />
+        </LinearLayout>
+
+        <!-- Calendar Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_4"
+            style="@style/Widget.ZenSwitch.Card"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/space_4">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:id="@+id/btn_prev"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_chevron_left"
+                        android:tint="?attr/colorOnSurfaceVariant"
+                        android:layout_alignParentStart="true"/>
+                    <TextView
+                        android:id="@+id/tv_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="October 2025"
+                        android:textAppearance="@style/TextAppearance.ZenSwitch.TitleMedium"
+                        android:textColor="?attr/colorOnSurface"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_centerInParent="true"/>
+                    <ImageView
+                        android:id="@+id/btn_next"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_chevron_right"
+                        android:tint="?attr/colorOnSurfaceVariant"
+                        android:layout_alignParentEnd="true"/>
+                </RelativeLayout>
+
+                <!-- Weekday labels -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_2"
+                    android:orientation="horizontal">
+                    <TextView style="@style/TextAppearance.ZenSwitch.BodySmall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Sun" android:textColor="?attr/colorOnSurfaceVariant"/>
+                    <TextView style="@style/TextAppearance.ZenSwitch.BodySmall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Mon" android:textColor="?attr/colorOnSurfaceVariant"/>
+                    <TextView style="@style/TextAppearance.ZenSwitch.BodySmall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Tue" android:textColor="?attr/colorOnSurfaceVariant"/>
+                    <TextView style="@style/TextAppearance.ZenSwitch.BodySmall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Wed" android:textColor="?attr/colorOnSurfaceVariant"/>
+                    <TextView style="@style/TextAppearance.ZenSwitch.BodySmall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Thu" android:textColor="?attr/colorOnSurfaceVariant"/>
+                    <TextView style="@style/TextAppearance.ZenSwitch.BodySmall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Fri" android:textColor="?attr/colorOnSurfaceVariant"/>
+                    <TextView style="@style/TextAppearance.ZenSwitch.BodySmall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Sat" android:textColor="?attr/colorOnSurfaceVariant"/>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/calendarGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_2"
+                    android:nestedScrollingEnabled="false"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_4"
+            style="@style/Widget.ZenSwitch.Card"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/space_4">
+
+                <TextView
+                    android:id="@+id/day_details_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selected Day"
+                    android:textAppearance="@style/TextAppearance.ZenSwitch.TitleMedium"
+                    android:textColor="?attr/colorOnSurface"/>
+
+                <TextView
+                    android:id="@+id/day_details_empty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_2"
+                    android:text="No mindful moments this day."
+                    android:textAppearance="@style/TextAppearance.ZenSwitch.BodySmall"
+                    android:textColor="?attr/colorOnSurfaceVariant"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/daySessionList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_2"
+                    android:nestedScrollingEnabled="false"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Weekly progress card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_4"
+            style="@style/Widget.ZenSwitch.Card"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/space_4">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This Week's Progress"
+                    android:textAppearance="@style/TextAppearance.ZenSwitch.TitleMedium"
+                    android:textColor="?attr/colorOnSurface"/>
+
+                <LinearLayout
+                    android:id="@+id/week_days_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_3"
+                    android:orientation="horizontal"
+                    android:weightSum="7">
+
+                    <include
+                        layout="@layout/item_week_day"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/item_week_day"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/item_week_day"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/item_week_day"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/item_week_day"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/item_week_day"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/item_week_day"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="?attr/colorOutlineVariant" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_3"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tv_summary_activities"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textAppearance="@style/TextAppearance.ZenSwitch.TitleLarge"
+                            android:textColor="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="Activities"
+                            android:textAppearance="@style/TextAppearance.ZenSwitch.BodySmall"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:drawableStart="@drawable/ic_bolt"
+                            android:drawableTint="?attr/colorOnSurfaceVariant"
+                            android:drawablePadding="4dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tv_summary_avg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0.0"
+                            android:textAppearance="@style/TextAppearance.ZenSwitch.TitleLarge"
+                            android:textColor="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="Avg / Day"
+                            android:textAppearance="@style/TextAppearance.ZenSwitch.BodySmall"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:drawableStart="@drawable/ic_target"
+                            android:drawableTint="?attr/colorOnSurfaceVariant"
+                            android:drawablePadding="4dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tv_summary_minutes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textAppearance="@style/TextAppearance.ZenSwitch.TitleLarge"
+                            android:textColor="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="Mins/Week"
+                            android:textAppearance="@style/TextAppearance.ZenSwitch.BodySmall"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:drawableStart="@drawable/ic_clock"
+                            android:drawableTint="?attr/colorOnSurfaceVariant"
+                            android:drawablePadding="4dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <Space android:layout_width="match_parent" android:layout_height="@dimen/space_6"/>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

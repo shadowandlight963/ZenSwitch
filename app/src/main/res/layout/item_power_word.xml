@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/btnWord"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:layout_margin="6dp"
+    android:text="Word"
+    android:textAllCaps="false"
+    android:textSize="14sp"
+    android:textColor="?attr/colorOnPrimary"
+    app:backgroundTint="#22FFFFFF"
+    app:cornerRadius="999dp" />

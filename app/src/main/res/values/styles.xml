@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Toolbar title appearance -->
+    <style name="ToolbarTitle" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/header_text_dark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="Widget.ZenSwitch.Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">@dimen/radius_m</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="iconTint">?attr/colorOnPrimary</item>
+        <item name="rippleColor">?attr/colorSurfaceVariant</item>
+    </style>
+
+    <style name="Widget.ZenSwitch.Button.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="cornerRadius">@dimen/radius_m</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="strokeColor">?attr/colorOutline</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="iconTint">?attr/colorOnSurface</item>
+        <item name="rippleColor">?attr/colorSurfaceVariant</item>
+    </style>
+
+    <style name="Widget.ZenSwitch.Button.Tonal" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">@dimen/radius_m</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="backgroundTint">?attr/colorSurfaceVariant</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="iconTint">?attr/colorOnSurface</item>
+        <item name="rippleColor">?attr/colorOutline</item>
+    </style>
+
+    <style name="Widget.ZenSwitch.Button.Text" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="cornerRadius">@dimen/radius_m</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="iconTint">?attr/colorOnSurface</item>
+        <item name="rippleColor">?attr/colorSurfaceVariant</item>
+    </style>
+
+    <style name="Widget.ZenSwitch.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/radius_l</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">?attr/colorOutlineVariant</item>
+        <item name="cardBackgroundColor">?attr/colorSurface</item>
+    </style>
+
+    <style name="Widget.ZenSwitch.Card.Elevated" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/radius_l</item>
+        <item name="cardElevation">2dp</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="cardBackgroundColor">?attr/colorSurface</item>
+    </style>
+
+    <style name="Widget.ZenSwitch.Chip" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipCornerRadius">@dimen/radius_full</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipStrokeColor">?attr/colorOutlineVariant</item>
+        <item name="chipBackgroundColor">?attr/colorSurfaceVariant</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="checkedIconTint">?attr/colorPrimary</item>
+        <item name="rippleColor">?attr/colorOutline</item>
+    </style>
+
+    <style name="Widget.ZenSwitch.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">?attr/colorSurface</item>
+        <item name="boxStrokeColor">?attr/colorOutline</item>
+        <item name="boxStrokeErrorColor">?attr/colorError</item>
+        <item name="boxCornerRadiusTopStart">@dimen/radius_m</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/radius_m</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/radius_m</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/radius_m</item>
+        <item name="hintTextColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:textColorHint">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <style name="Widget.ZenSwitch.TopAppBar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="elevation">0dp</item>
+        <item name="titleTextColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="Widget.ZenSwitch.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="elevation">0dp</item>
+        <item name="itemIconTint">@color/bottom_nav_item_color</item>
+        <item name="itemTextColor">@color/bottom_nav_item_color</item>
+        <item name="labelVisibilityMode">labeled</item>
+    </style>
+
+    <style name="Widget.ZenSwitch.FloatingBottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="elevation">0dp</item>
+        <item name="itemIconTint">@color/bottom_nav_item_color</item>
+        <item name="itemTextColor">@color/bottom_nav_item_color</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="itemRippleColor">@android:color/transparent</item>
+        <item name="itemActiveIndicatorStyle">@null</item>
+        <item name="android:textSize">12sp</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.ZenSwitch.LabelSmall</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.ZenSwitch.LabelSmall</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.ZenSwitch.Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_3"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_4">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/icon_container"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cardCornerRadius="@dimen/radius_m"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorSurfaceVariant"
+            app:strokeWidth="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_profile"
+                android:tint="?attr/colorPrimary"
+                android:contentDescription="@null" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_3"
+            android:layout_marginEnd="@dimen/space_3"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/icon_container"
+            app:layout_constraintEnd_toStartOf="@id/duration"
+            app:layout_constraintTop_toTopOf="@id/icon_container"
+            app:layout_constraintBottom_toBottomOf="@id/icon_container">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4-7-8 Sleep Breath"
+                android:textAppearance="@style/TextAppearance.ZenSwitch.TitleMedium"
+                android:textColor="?attr/colorOnSurface"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_1"
+                android:text="2 hours ago"
+                android:textAppearance="@style/TextAppearance.ZenSwitch.BodySmall"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:minWidth="52dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/space_3"
+            android:paddingEnd="@dimen/space_3"
+            android:background="@drawable/bg_small_pill"
+            android:backgroundTint="?attr/colorSurfaceVariant"
+            android:text="2 min"
+            android:textAppearance="@style/TextAppearance.ZenSwitch.LabelMedium"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/icon_container"
+            app:layout_constraintBottom_toBottomOf="@id/icon_container" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

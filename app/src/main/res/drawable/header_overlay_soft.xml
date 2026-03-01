@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Very light green tint fading to transparent for readability over image -->
+    <gradient
+        android:angle="270"
+        android:startColor="#CCF6F0E6"
+        android:endColor="#00F6F0E6"
+        android:type="linear"/>
+</shape>

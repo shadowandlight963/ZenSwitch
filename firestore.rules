@@ -1,0 +1,35 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function isOwner(uid) { return signedIn() && request.auth.uid == uid; }
+
+    // Per-user private data
+    match /users/{uid} {
+      allow read, write: if isOwner(uid);
+
+      match /history/{sessionId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /dailyStats/{dayId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /rewards/{rewardId} {
+        allow read, write: if isOwner(uid);
+      }
+    }
+
+    // Global activity catalog (readable by any signed-in user)
+    match /catalog/static/categories/{categoryId} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
+    match /catalog/static/activities/{activityId} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+  }
+}

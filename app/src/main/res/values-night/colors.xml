@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="neutral_bg_fixed">#0B1220</color>
+    <color name="neutral_surface_fixed">#0F172A</color>
+    <color name="neutral_surface_variant_fixed">#111C33</color>
+    <color name="neutral_outline_fixed">#22314D</color>
+    <color name="neutral_text_fixed">#F8FAFC</color>
+    <color name="neutral_text_muted_fixed">#CBD5E1</color>
+
+    <color name="sage_primary">@color/sage_primary_fixed</color>
+    <color name="sage_primary_light">@color/sage_primary_light_fixed</color>
+    <color name="sage_primary_foreground">@color/white</color>
+
+    <color name="text_foreground">@color/neutral_text_fixed</color>
+    <color name="text_muted">@color/neutral_text_muted_fixed</color>
+
+    <color name="bg_surface">@color/neutral_bg_fixed</color>
+    <color name="bg_card">@color/neutral_surface_fixed</color>
+</resources>

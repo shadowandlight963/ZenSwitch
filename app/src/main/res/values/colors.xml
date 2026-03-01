@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="neutral_bg_fixed">#F8FAFC</color>
+    <color name="neutral_surface_fixed">#FFFFFF</color>
+    <color name="neutral_surface_variant_fixed">#F1F5F9</color>
+    <color name="neutral_outline_fixed">#E2E8F0</color>
+    <color name="neutral_text_fixed">#0F172A</color>
+    <color name="neutral_text_muted_fixed">#475569</color>
+
+    <!-- Floating Navigation Background - Pure white unique name -->
+    <color name="floating_nav_pure_white">#FFFFFF</color>
+    
+    <!-- Navigation Item Colors -->
+    <color name="bottom_nav_item_color_unselected">#9CA3AF</color>
+
+    <!-- Sage palette from design - Fern green inspired -->
+    <color name="sage_primary_fixed">#5FAE66</color>
+    <color name="sage_primary_light_fixed">#D7F2DB</color>
+    <color name="sage_primary_foreground_fixed">#102219</color>
+    <color name="sage_secondary">@color/sage_primary_light_fixed</color>
+    <color name="text_foreground_fixed">@color/neutral_text_fixed</color>
+    <color name="text_muted_fixed">@color/neutral_text_muted_fixed</color>
+    <color name="bg_surface_fixed">@color/neutral_bg_fixed</color>
+
+    <!-- Ocean palette (unlockable) - Cyan-inspired refinement -->
+    <color name="ocean_primary_fixed">#00C8D4</color>
+    <color name="ocean_secondary_fixed">#B2EBF2</color>
+    <color name="ocean_background_fixed">#E8F5F5</color>
+    <color name="ocean_primary">@color/ocean_primary_fixed</color>
+    <color name="ocean_secondary">@color/ocean_secondary_fixed</color>
+    
+    <!-- Ocean palette (Dark mode variants) -->
+    <color name="ocean_primary_dark">#00E5FF</color>
+    <color name="ocean_secondary_dark">#006064</color>
+    <color name="ocean_background_dark">#1A2E2E</color>
+    
+    <!-- Ocean accent colors (subtle cyan highlights) -->
+    <color name="ocean_accent_cyan">#00FFFF</color>
+    <color name="ocean_accent_cyan_soft">#B3F5FF</color>
+
+    <!-- Sunset palette (unlockable) - Refined for warmth without aggression -->
+    <color name="sunset_primary_fixed">#D16A45</color>
+    <color name="sunset_secondary_fixed">#F4E4D8</color>
+    <color name="sunset_background_fixed">#FEF7F2</color>
+    <color name="sunset_primary">@color/sunset_primary_fixed</color>
+    <color name="sunset_secondary">@color/sunset_secondary_fixed</color>
+    
+    <!-- Sunset palette (Dark mode variants) -->
+    <color name="sunset_primary_dark">#E8A087</color>
+    <color name="sunset_secondary_dark">#B8553F</color>
+    <color name="sunset_background_dark">#2D1F1A</color>
+    
+    <!-- Sunset palette (Softened - Warm but Calm) - Refined -->
+    <color name="sunset_primary_soft">#C85E35</color>
+    <color name="sunset_secondary_soft">#E8D5B7</color>
+    <color name="sunset_background_soft">#FEF7F2</color>
+
+    <!-- Theme-driven aliases (used across layouts/drawables) -->
+    <color name="sage_primary">@color/sage_primary_fixed</color>
+    <color name="sage_primary_light">@color/sage_primary_light_fixed</color>
+    <color name="sage_primary_foreground">@color/sage_primary_foreground_fixed</color>
+    <color name="text_foreground">@color/text_foreground_fixed</color>
+    <color name="text_muted">@color/text_muted_fixed</color>
+    <color name="bg_surface">@color/bg_surface_fixed</color>
+    <color name="bg_card">@color/neutral_surface_fixed</color>
+    <!-- Toolbar light green background -->
+    <color name="toolbar_light_green">#EAF3EC</color>
+    <!-- Dark header text color for readability over light images -->
+    <color name="header_text_dark">@color/neutral_text_fixed</color>
+    <!-- 10% opacity of sage_primary: 1A = 26/255 -->
+    <color name="sage_primary_10">#1A163528</color>
+    <!-- Minimal palette (Softened - Clean but Warm) -->
+    <color name="minimal_primary_soft">#374151</color>
+    <color name="minimal_background_soft">#F9FAFB</color>
+    <color name="minimal_surface_soft">#FFFFFF</color>
+    <color name="minimal_text_soft">#111827</color>
+    <color name="minimal_text_muted_soft">#6B7280</color>
+
+    <!-- Button System (Unified - Theme-Consistent Solids) - Updated -->
+    <color name="button_primary_sage">#5FAE66</color>
+    <color name="button_primary_ocean">#00C8D4</color>
+    <color name="button_primary_sunset">#C85E35</color>
+    <color name="button_primary_minimal">#374151</color>
+    <color name="button_secondary">#F1F5F9</color>
+    <color name="button_secondary_text">#0F172A</color>
+
+    <color name="zen_ocean_blue">#1F6FEB</color>
+    <color name="zen_ocean_teal">#1BB7A6</color>
+    <color name="zen_sunset_orange">#FF8A5B</color>
+    <color name="zen_lavender">#9A7BFF</color>
+    <color name="zen_indigo">#3A4DFF</color>
+    <color name="zen_purple">#7B2CFF</color>
+    <color name="zen_focus_red">#B71C1C</color>
+    <color name="chip_text_color">#FFFFFF</color>
+
+    <!-- Button System (Unified - Theme-Consistent Solids) -->
+    <color name="auth_grad_start">#0B1F17</color>
+    <color name="auth_grad_mid">#163528</color>
+    <color name="auth_grad_end">#DCE8E2</color>
+
+    </resources>

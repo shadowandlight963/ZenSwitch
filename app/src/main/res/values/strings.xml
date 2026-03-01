@@ -1,0 +1,139 @@
+<resources>
+    <string name="app_name">Our Major</string>
+    <string name="title_home">Home</string>
+    <string name="title_activities">Activities</string>
+    <string name="title_calendar">Calendar</string>
+    <string name="title_rewards">Rewards</string>
+    <string name="title_profile">Profile</string>
+
+    <string name="home_welcome">Welcome back!</string>
+    <string name="home_subtitle">Ready for another mindful day?</string>
+    <string name="home_todays_progress">Today\'s Progress</string>
+    <string name="home_start_button">Start Mindful Activity</string>
+    <string name="home_this_week">This week</string>
+    <string name="home_activities_done">Activities done</string>
+    <string name="home_recent">Recent Activities</string>
+    <string name="completed">Done</string>
+
+    <!-- Accessibility Content Descriptions -->
+    <string name="close_session">Close session</string>
+    <string name="toggle_voice_guidance">Toggle voice guidance</string>
+    <string name="zen_switch_logo">ZenSwitch logo - mindfulness and digital wellness</string>
+    <string name="instagram_usage_tracking">Instagram usage tracking</string>
+    <string name="youtube_usage_tracking">YouTube usage tracking</string>
+    <string name="activity_completed">Activity completed</string>
+    <string name="filter_activities">Filter activities</string>
+    <string name="toggle_focus_guard">Toggle Focus Guard protection</string>
+
+    <!-- Progressive Disclosure -->
+    <string name="info">Information</string>
+    <string name="dismiss_hint">Dismiss hint</string>
+    <string name="focus_guard_hint">Tap to protect your focus time from social media</string>
+
+    <!-- Light Personalization -->
+    <string name="continue_last_activity">Continue: %s</string>
+    <string name="streak_encouragement">%d day streak! Keep it up.</string>
+    <string name="daily_progress_almost">Almost there! %d more minutes to your goal.</string>
+    <string name="daily_progress_complete">Goal achieved! Great work today.</string>
+
+    <string name="zen_id_not_set">Not set</string>
+    <string name="zen_id_archetype_label">ARCHETYPE</string>
+    <string name="zen_id_north_star_label">NORTH STAR</string>
+    <string name="zen_id_age_label">AGE</string>
+    <string name="zen_id_gender_label">GENDER</string>
+    <string name="zen_id_contact_label">CONTACT</string>
+
+    <!-- ZenSwitch Focus Engine -->
+    <string name="focus_notification_channel_name">Monitor Active</string>
+    <string name="focus_notification_title">ZenSwitch</string>
+    <string name="focus_notification_text">Monitor active</string>
+    
+    <!-- Calm Interventions -->
+    <string name="gentle_reminder_title">Mindful Moment</string>
+    <string name="gentle_reminder_text">You\'ve used %1$d minutes of your %2$d minute focus goal</string>
+    <string name="gentle_reminder_big">You\'ve used %1$d minutes of your %2$d minute focus goal. Consider taking a mindful break.</string>
+    <string name="gentle_reminder_dismiss">I\'m aware</string>
+    
+    <string name="wellness_invitation_title">Time for a Mindful Break?</string>
+    <string name="wellness_invitation_text">You\'ve reached %d minutes. Try a 2-minute breathing exercise?</string>
+    <string name="wellness_invitation_action">2-min Breathing</string>
+    <string name="wellness_invitation_continue">Continue</string>
+    
+    <string name="wellness_intervention_title">Mindful Check-in</string>
+    <string name="wellness_intervention_text">%d minutes reached. Let\'s take a 3-minute break together.</string>
+    <string name="wellness_intervention_big">%d minutes reached. Let\'s take a 3-minute break together. This helps maintain your focus and wellbeing.</string>
+    <string name="wellness_intervention_action">Start 3-min Break</string>
+    <string name="wellness_intervention_override">Emergency Override</string>
+    
+    <string name="emergency_override_title">Focus Override Active</string>
+    <string name="emergency_override_text">Extra %d minutes granted. Use mindfully.</string>
+    <string name="emergency_override_end">End Override</string>
+    
+    <string name="gentle_reminders_channel">Mindful Reminders</string>
+    <string name="gentle_reminders_channel_desc">Gentle reminders about your focus goals</string>
+    <string name="wellness_invitations_channel">Wellness Invitations</string>
+    <string name="wellness_invitations_channel_desc">Invitations to take mindful breaks</string>
+    <!-- Nudge interceptor -->
+    <string name="nudge_channel_name">Time to Switch</string>
+    <string name="nudge_title">Time to Switch?</string>
+    <string name="nudge_text_format">You\'ve been scrolling for %1$d mins. Tap to reset.</string>
+    <string name="nudge_limit_reached_title">Daily Limit Reached 🛑</string>
+    <string name="nudge_limit_reached_text">You\'ve used %1$d m. Tap to switch to a mindful activity.</string>
+
+    <!-- Focus Pause (Friction Menu) -->
+    <string name="focus_pause_title">Need a break?</string>
+    <string name="focus_pause_15min">Pause for 15 Minutes</string>
+    <string name="focus_pause_1hour">Pause for 1 Hour</string>
+    <string name="focus_pause_until_tomorrow">Turn Off Until Tomorrow</string>
+
+    <!-- Focus Guard Card -->
+    <string name="focus_guard_title">Focus Guard</string>
+    <string name="focus_guard_pill_active">ON</string>
+    <string name="focus_guard_pill_inactive">OFF</string>
+    <string name="focus_guard_pill_activate">ACTIVATE</string>
+    <string name="focus_guard_pill_setup">SETUP</string>
+    <string name="focus_guard_subtitle_permission_needed">Permission needed</string>
+    <string name="focus_guard_subtitle_monitoring_active">Monitoring active</string>
+    <string name="focus_guard_subtitle_tap_to_configure">Tap to configure</string>
+
+    <!-- Focus Config (Setup) Sheet -->
+    <string name="focus_config_title">Set daily limit</string>
+    <string name="focus_config_subtitle">We\'ll track Instagram &amp; YouTube</string>
+    <string name="focus_config_activate">Activate</string>
+    <string name="focus_config_activate_guard">ACTIVATE GUARD</string>
+    <string name="focus_config_update_limit">UPDATE LIMIT</string>
+    <string name="focus_config_limit_30">30 min</string>
+    <string name="focus_config_limit_60">60 min</string>
+    <string name="focus_config_limit_90">90 min</string>
+    <string name="focus_config_limit_custom">Custom</string>
+    <string name="focus_config_time_picker_title">Set Daily Limit</string>
+    <string name="focus_config_limit_updated">Limit updated to %1$s.</string>
+    <string name="focus_config_limit_format_1h">1 hour</string>
+    <string name="focus_config_limit_format_hours">%d hours</string>
+    <string name="focus_config_limit_format_1h_m">1 hour %d mins</string>
+    <string name="focus_config_limit_format_h_m">%d hours %d mins</string>
+    <string name="focus_config_limit_format_1m">1 minute</string>
+    <string name="focus_config_limit_format_mins">%d minutes</string>
+    <string name="focus_config_test_nudge">Test Nudge</string>
+    <string name="focus_config_test_nudge_toast">Firing test notification…</string>
+
+    <!-- Permission gate (post-login) -->
+    <string name="permission_open_settings">Open Settings</string>
+    <string name="permission_usage_title">Usage Access Required</string>
+    <string name="permission_usage_message">ZenSwitch needs Usage Access to track Instagram and YouTube for Focus Guard. Please allow in Settings.</string>
+    <string name="permission_notification_title">Notifications Required</string>
+    <string name="permission_notification_message">Allow notifications so ZenSwitch can remind you when you reach your daily limit.</string>
+    <string name="permission_battery_title">Allow Background Activity</string>
+    <string name="permission_battery_message">To keep Focus Guard running reliably, allow ZenSwitch to run in the background. This is the #1 reason the monitor stops.</string>
+    <string name="permission_overlay_title">Display over other apps</string>
+    <string name="permission_overlay_message">ZenSwitch needs this so the limit nudge can bring you back to a mindful activity when you\'re in another app. Required for reliable redirects.</string>
+
+    <!-- Generic error (no stack trace shown to user) -->
+    <string name="error_startup_generic">Something went wrong. Please try again.</string>
+    <string name="error_network_issue">Connection issue. Please check your internet and try again.</string>
+    <string name="error_permission_needed">Permission needed. ZenSwitch respects your privacy - we only track what you allow.</string>
+    <string name="error_server_issue">Our servers are having a moment. Please try again in a few minutes.</string>
+    <string name="error_unknown_issue">Something went wrong. We\'re working on it - please try again.</string>
+    <string name="action_try_again">Try Again</string>
+    <string name="action_need_help">Need Help?</string>
+</resources>
