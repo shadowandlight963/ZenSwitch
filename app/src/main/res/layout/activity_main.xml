@@ -24,19 +24,10 @@
             android:paddingStart="12dp"
             android:paddingEnd="12dp">
 
-            <ImageView
-                android:id="@+id/app_logo"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_logo_placeholder"
-                android:tint="?attr/colorOnSurface"
-                android:contentDescription="@string/app_name"/>
-
             <TextView
                 android:id="@+id/app_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:text="ZenSwitch"
                 android:textAppearance="@style/TextAppearance.ZenSwitch.TitleMedium"
                 android:textColor="?attr/colorOnSurface"
@@ -83,7 +74,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="@null"
+                android:foreground="@drawable/nav_clean_ripple"
                 android:clickable="true"
                 android:focusable="true">
 
@@ -117,7 +109,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="@null"
+                android:foreground="@drawable/nav_clean_ripple"
                 android:clickable="true"
                 android:focusable="true">
 
@@ -151,7 +144,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="@null"
+                android:foreground="@drawable/nav_clean_ripple"
                 android:clickable="true"
                 android:focusable="true">
 
@@ -185,7 +179,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="@null"
+                android:foreground="@drawable/nav_clean_ripple"
                 android:clickable="true"
                 android:focusable="true">
 
@@ -219,7 +214,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="@null"
+                android:foreground="@drawable/nav_clean_ripple"
                 android:clickable="true"
                 android:focusable="true">
 

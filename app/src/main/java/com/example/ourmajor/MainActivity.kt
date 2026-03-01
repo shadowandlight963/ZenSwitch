@@ -5,6 +5,10 @@ import android.os.Bundle
 import android.util.TypedValue
 import android.util.Log
 import android.widget.Toast
+import android.view.View
+import android.view.animation.OvershootInterpolator
+import android.animation.ValueAnimator
+import android.animation.AnimatorSet
 import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.ViewModelProvider
@@ -149,56 +153,112 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Update navigation selection UI - ONLY place where selection updates happen
+     * Update navigation selection UI with icon micro-interactions - ONLY place where selection updates happen
      */
     private fun updateNavigationSelection(position: Int) {
-        // Reset all items to unselected state
+        // Reset all items to unselected state immediately
         resetNavigationItems()
         
-        // Set selected item based on position
+        // Animate selected icon with micro-interactions
+        animateSelectedIcon(position)
+        
+        // Set selected item colors (labels update instantly)
         when (position) {
             0 -> {
-                binding.navHomeIcon.setColorFilter(getSelectedColor())
                 binding.navHomeLabel.setTextColor(getSelectedColor())
             }
             1 -> {
-                binding.navActivitiesIcon.setColorFilter(getSelectedColor())
                 binding.navActivitiesLabel.setTextColor(getSelectedColor())
             }
             2 -> {
-                binding.navCalendarIcon.setColorFilter(getSelectedColor())
                 binding.navCalendarLabel.setTextColor(getSelectedColor())
             }
             3 -> {
-                binding.navRewardsIcon.setColorFilter(getSelectedColor())
                 binding.navRewardsLabel.setTextColor(getSelectedColor())
             }
             4 -> {
-                binding.navProfileIcon.setColorFilter(getSelectedColor())
                 binding.navProfileLabel.setTextColor(getSelectedColor())
             }
         }
     }
     
     /**
-     * Reset all navigation items to unselected state
+     * Animate selected icon with scale and color transitions
+     */
+    private fun animateSelectedIcon(position: Int) {
+        val selectedIcon = when (position) {
+            0 -> binding.navHomeIcon
+            1 -> binding.navActivitiesIcon
+            2 -> binding.navCalendarIcon
+            3 -> binding.navRewardsIcon
+            4 -> binding.navProfileIcon
+            else -> null
+        }
+        
+        selectedIcon?.let { icon ->
+            // Create scale animation (pop effect)
+            val scaleX = ValueAnimator.ofFloat(1.0f, 1.12f, 1.0f)
+            scaleX.duration = 140
+            scaleX.interpolator = OvershootInterpolator(1.2f)
+            scaleX.addUpdateListener { animator ->
+                icon.scaleX = animator.animatedValue as Float
+            }
+            
+            val scaleY = ValueAnimator.ofFloat(1.0f, 1.12f, 1.0f)
+            scaleY.duration = 140
+            scaleY.interpolator = OvershootInterpolator(1.2f)
+            scaleY.addUpdateListener { animator ->
+                icon.scaleY = animator.animatedValue as Float
+            }
+            
+            // Create color transition animation
+            val colorAnimator = ValueAnimator.ofArgb(getUnselectedColor(), getSelectedColor())
+            colorAnimator.duration = 150
+            colorAnimator.addUpdateListener { animator ->
+                icon.setColorFilter(animator.animatedValue as Int)
+            }
+            
+            // Play animations together
+            val animatorSet = AnimatorSet()
+            animatorSet.playTogether(scaleX, scaleY, colorAnimator)
+            animatorSet.start()
+        }
+    }
+    
+    /**
+     * Reset all navigation items to unselected state (safe reset system)
      */
     private fun resetNavigationItems() {
         val unselectedColor = getUnselectedColor()
         
+        // Reset Home
         binding.navHomeIcon.setColorFilter(unselectedColor)
+        binding.navHomeIcon.scaleX = 1.0f
+        binding.navHomeIcon.scaleY = 1.0f
         binding.navHomeLabel.setTextColor(unselectedColor)
         
+        // Reset Activities
         binding.navActivitiesIcon.setColorFilter(unselectedColor)
+        binding.navActivitiesIcon.scaleX = 1.0f
+        binding.navActivitiesIcon.scaleY = 1.0f
         binding.navActivitiesLabel.setTextColor(unselectedColor)
         
+        // Reset Calendar
         binding.navCalendarIcon.setColorFilter(unselectedColor)
+        binding.navCalendarIcon.scaleX = 1.0f
+        binding.navCalendarIcon.scaleY = 1.0f
         binding.navCalendarLabel.setTextColor(unselectedColor)
         
+        // Reset Rewards
         binding.navRewardsIcon.setColorFilter(unselectedColor)
+        binding.navRewardsIcon.scaleX = 1.0f
+        binding.navRewardsIcon.scaleY = 1.0f
         binding.navRewardsLabel.setTextColor(unselectedColor)
         
+        // Reset Profile
         binding.navProfileIcon.setColorFilter(unselectedColor)
+        binding.navProfileIcon.scaleX = 1.0f
+        binding.navProfileIcon.scaleY = 1.0f
         binding.navProfileLabel.setTextColor(unselectedColor)
     }
     

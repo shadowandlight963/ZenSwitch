@@ -53,7 +53,7 @@
 
         <item name="android:colorBackground">@color/neutral_bg_fixed</item>
         <item name="colorOnBackground">@color/neutral_text_fixed</item>
-        <item name="colorSurface">@color/neutral_surface_fixed</item>
+        <item name="colorSurface">@color/toolbar_light_green</item>
         <item name="colorOnSurface">@color/neutral_text_fixed</item>
         <item name="colorSurfaceVariant">@color/neutral_surface_variant_fixed</item>
         <item name="colorOnSurfaceVariant">@color/neutral_text_muted_fixed</item>
@@ -99,7 +99,7 @@
 
         <item name="android:colorBackground">@color/neutral_bg_fixed</item>
         <item name="colorOnBackground">@color/neutral_text_fixed</item>
-        <item name="colorSurface">@color/neutral_surface_fixed</item>
+        <item name="colorSurface">@color/ocean_background_fixed</item>
         <item name="colorOnSurface">@color/neutral_text_fixed</item>
         <item name="colorSurfaceVariant">@color/neutral_surface_variant_fixed</item>
         <item name="colorOnSurfaceVariant">@color/neutral_text_muted_fixed</item>
@@ -145,7 +145,7 @@
 
         <item name="android:colorBackground">@color/neutral_bg_fixed</item>
         <item name="colorOnBackground">@color/neutral_text_fixed</item>
-        <item name="colorSurface">@color/neutral_surface_fixed</item>
+        <item name="colorSurface">@color/sunset_background_fixed</item>
         <item name="colorOnSurface">@color/neutral_text_fixed</item>
         <item name="colorSurfaceVariant">@color/neutral_surface_variant_fixed</item>
         <item name="colorOnSurfaceVariant">@color/neutral_text_muted_fixed</item>
@@ -186,13 +186,21 @@
 
         <item name="android:colorBackground">@color/neutral_bg_fixed</item>
         <item name="colorOnBackground">@color/neutral_text_fixed</item>
-        <item name="colorSurface">@color/neutral_surface_fixed</item>
-        <item name="colorOnSurface">@color/neutral_text_fixed</item>
+        <item name="colorSurface">@color/minimal_background_soft</item>
+        <item name="colorOnSurface">@color/minimal_text_soft</item>
         <item name="colorSurfaceVariant">@color/neutral_surface_variant_fixed</item>
         <item name="colorOnSurfaceVariant">@color/neutral_text_muted_fixed</item>
 
         <item name="colorOutline">@color/neutral_outline_fixed</item>
         <item name="colorOutlineVariant">@color/neutral_outline_fixed</item>
+
+        <item name="colorSurfaceContainerLowest">@color/neutral_surface_fixed</item>
+        <item name="colorSurfaceContainerLow">@color/neutral_surface_fixed</item>
+        <item name="colorSurfaceContainer">@color/neutral_surface_fixed</item>
+        <item name="colorSurfaceContainerHigh">@color/neutral_surface_variant_fixed</item>
+        <item name="colorSurfaceContainerHighest">@color/neutral_surface_variant_fixed</item>
+        <item name="colorSurfaceBright">@color/neutral_surface_fixed</item>
+        <item name="colorSurfaceDim">@color/neutral_bg_fixed</item>
 
         <item name="android:windowBackground">@color/neutral_bg_fixed</item>
     </style>
